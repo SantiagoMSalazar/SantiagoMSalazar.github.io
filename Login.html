@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login Page</title>
+	<script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Login</h1>
+		<form action="login.php" method="post">
+			email: <input type="text" name="username" placeholder="Username">
+			Password: <input type="password" name="password" placeholder="Password"><br>
+			<button type="submit">Login</button><br>
+			Are you agree with the conditions?
+			<input type="checkbox" name="Aceptouu" id="">
+
+		</form>
+	</div>
+
+	<script type="module">
+		// Import the functions you need from the SDKs you need
+		//import {ini } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js"
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+		//import { getAuth } from "firebase/auth";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+
+		// Your web app's Firebase configuration
+		const firebaseConfig = {
+			apiKey: "AIzaSyDs44lGLund1a0YaiOHh9_Rim-RUKwgcZk",
+			authDomain: "appweb-247d3.firebaseapp.com",
+			projectId: "appweb-247d3",
+			storageBucket: "appweb-247d3.appspot.com",
+			messagingSenderId: "147916818920",
+			appId: "1:147916818920:web:e5d064df6117a23ec53c5d"
+		};
+		const email = "santiago@gmail.com";
+		const password = "123112";
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+
+		import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+
+		const auth = getAuth();
+		createUserWithEmailAndPassword(auth, email, password)
+			.then((userCredential) => {
+				// Signed in
+				const user = userCredential.user;
+				// ...
+			})
+			.catch((error) => {
+				const errorCode = error.code;
+				const errorMessage = error.message;
+				console.log(errorCode, errorMessage);
+			});
+	</script>
+</body>
+
+</html>
