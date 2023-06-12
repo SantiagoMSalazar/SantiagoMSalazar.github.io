@@ -1,0 +1,21 @@
+*{margin: 0; padding: 0;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif}
+a{
+    /*border: solid #04AA6D 1px;*/
+    border-radius: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: #252050;
+    text-decoration: none;
+    color: #FFFF;
+}    
+.btnInicio{
+    display: flex;
+    margin: auto;
+    width: 200px;
+    margin-top: 30%;
+}
+a:hover{
+    background: #314587;
+}
